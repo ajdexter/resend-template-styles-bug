@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Style Preservation Test</title>
+</head>
+<body style="margin:0;padding:0;background-color:#111827">
+  <!--
+    This template tests whether Resend's template processing preserves
+    inline styles on typography elements (<p>, <h1>, <a>, <hr>).
+
+    Key test colors (easy to grep for):
+      #ec4899 - pink accent (on <p> label and <a> link)
+      #ffffff - white (on <h1> heading)
+      #d1d5db - light gray (on <p> body text)
+      #374151 - dark border (on <hr>)
+      Georgia - font-family (on <h1> and <p> elements)
+  -->
+  <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+         width="100%"
+         style="background-color:#111827;padding:40px 0">
+    <tr>
+      <td align="center">
+        <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+               width="600"
+               style="max-width:600px;background-color:#ffffff;border:1px solid #374151">
+          <tr>
+            <td style="padding:40px">
+              <!-- TEST 1: <p> with custom font, color, text-transform, letter-spacing -->
+              <p style="margin:0 0 16px 0;font-family:Georgia,serif;font-size:12px;color:#ec4899;text-transform:uppercase;letter-spacing:2px">
+                Section Label
+              </p>
+
+              <!-- TEST 2: <h1> with custom font, color, font-size, line-height -->
+              <h1 style="margin:0 0 24px 0;font-family:Georgia,serif;font-size:30px;font-weight:400;line-height:1.2;color:#ffffff">
+                Heading Text
+              </h1>
+
+              <!-- TEST 3: <p> with custom font, color, line-height -->
+              <p style="margin:0 0 24px 0;font-family:Georgia,serif;font-size:16px;line-height:26px;color:#d1d5db">
+                This is body text with custom styling. If you can read this in
+                Georgia with light gray color, the inline styles were preserved.
+              </p>
+
+              <!-- TEST 4: <hr> with custom border-color -->
+              <hr style="border:none;border-top:1px solid #374151;margin:24px 0" />
+
+              <!-- TEST 5: <a> with custom color (NOT default #067df7) -->
+              <p style="margin:0">
+                <a href="https://example.com"
+                   style="font-family:Georgia,serif;font-size:14px;color:#ec4899;text-decoration:none">
+                  Read More
+                </a>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

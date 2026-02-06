@@ -1,0 +1,15 @@
+{
+  "name": "resend-template-styles-bug",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "reproduce": "bun run reproduce.ts"
+  },
+  "dependencies": {
+    "resend": "^6.9.1"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.0"
+  }
+}
